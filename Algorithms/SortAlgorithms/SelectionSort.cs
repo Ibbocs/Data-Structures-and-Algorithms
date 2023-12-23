@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms
+namespace Algorithms.SortAlgorithms
 {
     public class SelectionSort
     {
@@ -14,7 +14,7 @@ namespace Algorithms
             for (int i = 0; i < array.Length - 1; i++)
             {
                 int minIndex = i;
-         
+
                 //j=i+1 cunki array getdikce balacalasir ve gereksiz donmesin deye yaziriq bunu
                 for (int j = i + 1; j < array.Length; j++)
                 {
@@ -79,7 +79,7 @@ namespace Algorithms
                 for (int j = i + 1; j < array.Length; j++)
                 {
                     // Elemanları ASCII değerlerine göre karşılaştırma, küçükten büyüğe sıralama
-                    if ((int)array[j] < (int)array[minIndex])
+                    if (array[j] < array[minIndex])
                     {
                         minIndex = j;
                     }
@@ -95,25 +95,25 @@ namespace Algorithms
         }
 
 
-        public void RecursiveSelectionSort( int[] array, int startIndex = 0)
+        public void RecursiveSelectionSort(int[] array, int startIndex = 0)
         {
-            if (array.Length -1 == startIndex)
+            if (array.Length - 1 == startIndex)
             {
                 return;
             }
 
             int minIndex = FindMinIndex(array, startIndex);
-            int[] swapedArray = SwapForSellectionSort(array,minIndex,startIndex);
+            int[] swapedArray = SwapForSellectionSort(array, minIndex, startIndex);
 
-            RecursiveSelectionSort( swapedArray, ++startIndex);
+            RecursiveSelectionSort(swapedArray, ++startIndex);
         }
 
         private int FindMinIndex(int[] array, int startIndex)
         {
             int minIndex = startIndex;
-            for (int i = startIndex+1; i < array.Length; i++)
+            for (int i = startIndex + 1; i < array.Length; i++)
             {
-                if (array[minIndex] > array[i] )
+                if (array[minIndex] > array[i])
                 {
                     minIndex = i;
                 }
@@ -125,8 +125,8 @@ namespace Algorithms
 
         private int[] SwapForSellectionSort(int[] array, int min, int max)
         {
-            int temp = array[max]; 
-            array[max] = array[min]; 
+            int temp = array[max];
+            array[max] = array[min];
             array[min] = temp;
 
             return array;

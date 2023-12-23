@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Algorithms;
+using Algorithms.SortAlgorithms;
 using Data_Structures_and_Algorithms;
 
 Console.WriteLine("Hello, World!");

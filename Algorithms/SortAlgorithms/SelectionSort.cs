@@ -131,5 +131,29 @@ namespace Algorithms.SortAlgorithms
 
             return array;
         }
+
+        public void SelectionSortGeneric<T>(T[] array) where T:IComparable//muqaise ede bilek deye
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                int minIndex = i;
+
+                //j=i+1 cunki array getdikce balacalasir ve gereksiz donmesin deye yaziriq bunu
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[j].CompareTo(array[minIndex]) < 0)
+                    {
+                        minIndex = j;
+                    }
+                    //currentIndex++;
+                }
+
+                //swap
+                var temp = array[i];
+                array[i] = array[minIndex];
+                array[minIndex] = temp;
+                //tem'i array[minIndex] kimi goturub terse swap da elemek olar
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.SortAlgorithms
 {
-    internal class BubbleSort
+    public class BubbleSort
     {
     }
 }

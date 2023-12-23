@@ -93,5 +93,43 @@ namespace Algorithms
 
             return array;
         }
+
+
+        public void RecursiveSelectionSort( int[] array, int startIndex = 0)
+        {
+            if (array.Length -1 == startIndex)
+            {
+                return;
+            }
+
+            int minIndex = FindMinIndex(array, startIndex);
+            int[] swapedArray = SwapForSellectionSort(array,minIndex,startIndex);
+
+            RecursiveSelectionSort( swapedArray, ++startIndex);
+        }
+
+        private int FindMinIndex(int[] array, int startIndex)
+        {
+            int minIndex = startIndex;
+            for (int i = startIndex+1; i < array.Length; i++)
+            {
+                if (array[minIndex] > array[i] )
+                {
+                    minIndex = i;
+                }
+            }
+
+
+            return minIndex;
+        }
+
+        private int[] SwapForSellectionSort(int[] array, int min, int max)
+        {
+            int temp = array[max]; 
+            array[max] = array[min]; 
+            array[min] = temp;
+
+            return array;
+        }
     }
 }

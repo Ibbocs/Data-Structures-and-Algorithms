@@ -39,6 +39,10 @@ Console.WriteLine("Hello, World!");
 
 int[] ints = { 1, 2, 6, 4, 5, 6, 3, 8, 0 };
 SelectionSort sort = new SelectionSort();
+sort.RecursiveSelectionSort( ints);
+
+Console.WriteLine($"{ints[0]}, {ints[1]}, {ints[8]}" );
+
 //var data = sort.SelectionSortForNumber(ints);
 var data1 = sort.SelectionSortForString("Baki, baki. bizimsen");
 var data2 = sort.SelectionSortForChar("Baki, baki. bizimsen");
